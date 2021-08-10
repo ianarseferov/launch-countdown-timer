@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 700;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 //Primary colors
 $grayish-blue: hsl(237, 18%, 59%);
 $soft-red: hsl(345, 95%, 68%);
@@ -21,3 +9,210 @@ $white: hsl(0, 0%, 100%);
 $dark-desaturated-blue: hsl(236, 21%, 26%);
 $very-dark-blue: hsl(235, 16%, 14%);
 $very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  user-select: none;
+  color: $white;
+  background: url(../images/bg-stars.svg) $very-dark-blue no-repeat center;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  @extend %flex;
+  z-index: 999;
+  height: 100%;
+  .container {
+    @extend %flex;
+    flex-direction: column;
+    justify-content: space-around !important;
+    height: 100%;
+    text-align: center;
+    h1 {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      letter-spacing: 5px;
+    }
+    .clock-container {
+      @extend %flex;
+      & > div {
+        margin: 0 1rem;
+        & > div {
+          width: 120px;
+          height: 110px;
+          font-size: 3.3rem;
+          color: $soft-red;
+          position: relative;
+          box-shadow: 0px 15px 5px -2px $very-dark-mostly-black-blue;
+          .line {
+            border-bottom: 1.5px solid $very-dark-mostly-black-blue;
+            width: 83.8%;
+            margin: auto;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+          }
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .upper {
+            position: absolute;
+            background: $dark-desaturated-blue;
+            height: 50%;
+            width: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            &::after {
+              left: -5px;
+              bottom: -8px;
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              background: $very-dark-blue;
+              box-sizing: inherit;
+              z-index: 10;
+            }
+            &::before {
+              right: -5px;
+              bottom: -8px;
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              background: $very-dark-blue;
+              box-sizing: inherit;
+              z-index: 10;
+            }
+          }
+          .down {
+            position: absolute;
+            background: $dark-desaturated-blue;
+            height: 50%;
+            width: 100%;
+            z-index: -1;
+            left: 0;
+            bottom: 0;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            &::after {
+              top: -8px;
+              left: -5px;
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              background: $very-dark-blue;
+              box-sizing: inherit;
+              z-index: 10;
+            }
+            &::before {
+              top: -8px;
+              right: -5px;
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              background: $very-dark-blue;
+              box-sizing: inherit;
+              z-index: 10;
+            }
+          }
+        }
+        p {
+          color: $grayish-blue;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          font-size: 12px;
+          margin-top: 1.7rem;
+        }
+      }
+    }
+    .social-icons {
+      @extend %flex;
+      i {
+        font-size: 1.5rem;
+        transition: color 0.4s ease-in;
+        color: $grayish-blue;
+        cursor: pointer;
+        &:hover {
+          color: $soft-red;
+        }
+        &:nth-child(2) {
+          margin: 0 2rem;
+        }
+      }
+    }
+  }
+}
+
+.hills {
+  z-index: -1;
+  img {
+    width: 100vw;
+    height: 100%;
+  }
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    .container {
+      .clock-container {
+        & > div {
+          margin: 0 5px;
+          p{
+            letter-spacing: 2px;
+            font-size: 10px;
+          }
+          & > div {
+            width: auto;
+            padding: 0 2.6rem;
+            height: 90px;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+  .hills {
+    height: 200px;
+    width: 100%;
+    background: url(../images/small.svg) center no-repeat;
+    img {
+      display: none;
+    }
+  }
+}
