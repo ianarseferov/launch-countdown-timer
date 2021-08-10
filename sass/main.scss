@@ -35,6 +35,17 @@ body {
   align-items: center;
 }
 
+%circle{
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: $very-dark-blue;
+  box-sizing: inherit;
+  z-index: 10;
+}
+
 main {
   @extend %flex;
   z-index: 999;
@@ -91,26 +102,12 @@ main {
             &::after {
               left: -5px;
               bottom: -8px;
-              content: "";
-              position: absolute;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: $very-dark-blue;
-              box-sizing: inherit;
-              z-index: 10;
+              @extend %circle;
             }
             &::before {
               right: -5px;
               bottom: -8px;
-              content: "";
-              position: absolute;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: $very-dark-blue;
-              box-sizing: inherit;
-              z-index: 10;
+             @extend %circle;
             }
           }
           .down {
@@ -126,26 +123,12 @@ main {
             &::after {
               top: -8px;
               left: -5px;
-              content: "";
-              position: absolute;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: $very-dark-blue;
-              box-sizing: inherit;
-              z-index: 10;
+            @extend %circle;
             }
             &::before {
               top: -8px;
               right: -5px;
-              content: "";
-              position: absolute;
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: $very-dark-blue;
-              box-sizing: inherit;
-              z-index: 10;
+              @extend %circle;
             }
           }
         }

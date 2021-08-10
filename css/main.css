@@ -34,6 +34,18 @@ main, main .container, main .container .clock-container, main .container .social
           align-items: center;
 }
 
+main .container .clock-container > div > div .upper::after, main .container .clock-container > div > div .upper::before, main .container .clock-container > div > div .down::after, main .container .clock-container > div > div .down::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #1e1f29;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  z-index: 10;
+}
+
 main {
   z-index: 999;
   height: 100%;
@@ -106,29 +118,11 @@ main .container .clock-container > div > div .upper {
 main .container .clock-container > div > div .upper::after {
   left: -5px;
   bottom: -8px;
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #1e1f29;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  z-index: 10;
 }
 
 main .container .clock-container > div > div .upper::before {
   right: -5px;
   bottom: -8px;
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #1e1f29;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  z-index: 10;
 }
 
 main .container .clock-container > div > div .down {
@@ -146,29 +140,11 @@ main .container .clock-container > div > div .down {
 main .container .clock-container > div > div .down::after {
   top: -8px;
   left: -5px;
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #1e1f29;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  z-index: 10;
 }
 
 main .container .clock-container > div > div .down::before {
   top: -8px;
   right: -5px;
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #1e1f29;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  z-index: 10;
 }
 
 main .container .clock-container > div p {
