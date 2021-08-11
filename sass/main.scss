@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-%circle{
+%circle {
   content: "";
   position: absolute;
   width: 15px;
@@ -107,7 +107,7 @@ main {
             &::before {
               right: -5px;
               bottom: -8px;
-             @extend %circle;
+              @extend %circle;
             }
           }
           .down {
@@ -123,7 +123,7 @@ main {
             &::after {
               top: -8px;
               left: -5px;
-            @extend %circle;
+              @extend %circle;
             }
             &::before {
               top: -8px;
@@ -176,7 +176,7 @@ main {
       .clock-container {
         & > div {
           margin: 0 5px;
-          p{
+          p {
             letter-spacing: 2px;
             font-size: 10px;
           }
