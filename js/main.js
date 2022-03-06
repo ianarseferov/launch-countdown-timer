@@ -2,7 +2,7 @@ const daysDisplay = document.querySelector("#days");
 const hoursDisplay = document.querySelector("#hours");
 const minutesDisplay = document.querySelector("#minutes");
 const secondsDisplay = document.querySelector("#seconds");
-const countDownDate = new Date("Jan 15, 2022, 00:00:00");
+const countDownDate = new Date("Jan 15, 2023, 00:00:00");
 
 let update = () => {
   var now = new Date().getTime();
